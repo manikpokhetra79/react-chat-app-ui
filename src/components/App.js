@@ -11,9 +11,10 @@ function App(props) {
   const [searchfield, setSearchField] = useState('');
   // fetch contacts from
   useEffect(() => {
+    // dispatch action to store contacts in state
     props.dispatch(fetchContacts());
     setContacts(props.contacts);
-  }, []);
+  }, [contacts]);
   //handle search change
   const onSearchChange = (event) => {
     setSearchField(event.target.value);
@@ -27,7 +28,7 @@ function App(props) {
     <>
       <Container fluid>
         <Row>
-          <Col lg="4">
+          <Col lg="4" style={{ border: '2px solid black' }}>
             <Row>
               <SearchBar searchChange={onSearchChange} />
             </Row>
