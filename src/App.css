@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.user-message {
+  background-color: #61dafb;
+  padding: 2px;
+  color: black;
+  width: 100%;
+}
+.me-message {
+  background-color: #dfe0e0;
+  padding: 2px;
+  color: black;
+  margin-left: 10%;
+}
