@@ -1,26 +1,25 @@
 import React from 'react';
-import { ListGroup, Image } from 'react-bootstrap';
-
+import ContactTab from './ContactTab';
+import './ContactList.css';
 function ContactList({ contacts }) {
+  // need contact tab component
   return (
     <>
-      <ListGroup variant="flush">
+      <div style={styles.contactList} className="contactscreen">
         {contacts.map((contact, index) => (
-          <ListGroup.Item key={index} action href="#link1">
-            {' '}
-            <Image
-              src={contact.image}
-              style={{ width: '60px', height: '60px' }}
-              // thumbnail
-              roundedCircle
-              className="mx-3"
-            />
-            {contact.name}
-          </ListGroup.Item>
+          <ContactTab contact={contact} key={index} />
         ))}
-      </ListGroup>
+      </div>
     </>
   );
 }
-
+const styles = {
+  contactList: {
+    position: 'fixed',
+    overflowY: 'scroll',
+    height: '85vh',
+    zIndex: '2',
+    backgroundColor: '#131C21',
+  },
+};
 export default ContactList;

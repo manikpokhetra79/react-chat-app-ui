@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { fetchContacts } from '../actions/contact';
-import '../App.css';
+import './App.css';
 import SearchBar from './SearchBar';
 import ContactList from './ContactList';
 
@@ -14,7 +14,7 @@ function App(props) {
     // dispatch action to store contacts in state
     props.dispatch(fetchContacts());
     setContacts(props.contacts);
-  }, [contacts]);
+  }, [props]);
   //handle search change
   const onSearchChange = (event) => {
     setSearchField(event.target.value);
@@ -26,32 +26,23 @@ function App(props) {
   });
   return (
     <>
-      <Container fluid>
+      <Container fluid style={styles.app}>
         <Row>
-          <Col lg="4" style={{ border: '2px solid black' }}>
+          <Col style={styles.leftSidebar} className="leftSidebar">
             <Row>
-              <SearchBar searchChange={onSearchChange} />
+              <Row>
+                <h2 style={{ color: 'white' }}>Profile Component</h2>
+              </Row>
+              <Row style={{ margin: 'auto' }}>
+                <SearchBar searchChange={onSearchChange} />
+              </Row>
             </Row>
-            <Row>
+            <Row style={styles.contactList}>
               <ContactList contacts={filteredContacts} />
             </Row>
           </Col>
-          <Col lg="8"></Col>
+          <Col style={styles.rightSidebar}></Col>
         </Row>
-        {/* {contacts.map((contact) => (
-          <div>
-            <h1>{contact.name}</h1>
-            <div>
-              {contact.chatlog.length > 0 &&
-                contact.chatlog.map((message) => (
-                  <p className={`${message.sender}-message`}>
-                    {' '}
-                    {message.text} ,{message.timestamp}
-                  </p>
-                ))}
-            </div>
-          </div>
-        ))} */}
       </Container>
     </>
   );
@@ -61,4 +52,26 @@ function mapStateToProps(state) {
     contacts: state.contacts,
   };
 }
+const styles = {
+  app: {
+    maxHeight: '100vh',
+  },
+  leftSidebar: {
+    backgroundColor: '#3b4044',
+    borderRight: '1px solid grey',
+    padding: '10px',
+    position: 'fixed',
+    zIndex: '1',
+    top: '0',
+    bottom: '0',
+  },
+  rightSidebar: {
+    backgroundColor: '#262D31',
+    position: 'fixed',
+    overflowY: 'auto',
+
+    top: '0',
+    bottom: '0',
+  },
+};
 export default connect(mapStateToProps)(App);

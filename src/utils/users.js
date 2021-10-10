@@ -74,7 +74,7 @@ export const data = {
             message_id: 4,
           },
           {
-            text: 'Btw Did you recieve the package lorem ipsum',
+            text: 'Btw Do you know who is Chuck?',
             timestamp: '10:05 AM',
             sender: 'me',
             message_id: 5,
@@ -193,12 +193,19 @@ export const data = {
             message_id: 4,
           },
           {
-            text: 'Nothing Dean, You take care now...',
+            text: 'Nothing Dean, You take care now and if you need anything tell me',
             timestamp: '10:09 AM',
             sender: 'me',
             message_id: 5,
           },
         ],
+      },
+      {
+        id: 8,
+        name: 'Chuck',
+        image:
+          'https://tvline.com/wp-content/uploads/2020/06/rob-benedict-supernatural.jpg',
+        chatlog: [],
       },
     ],
   },

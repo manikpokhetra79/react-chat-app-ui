@@ -1,14 +1,24 @@
 import React from 'react';
-import { InputGroup, FormControl } from 'react-bootstrap';
+
 function SearchBar({ searchChange }) {
   return (
     <>
-      <InputGroup className="mb-3">
-        {/* <i class="fas fa-search"></i> */}
-        <FormControl placeholder="search name" onChange={searchChange} />
-      </InputGroup>
+      <input
+        style={styles.input}
+        className="mb-3"
+        placeholder="search name"
+        onChange={searchChange}
+      ></input>
     </>
   );
 }
-
+const styles = {
+  input: {
+    borderRadius: '18px',
+    width: '80%',
+    backgroundColor: '#323739',
+    outline: 'none',
+    color : 'grey'
+  },
+};
 export default SearchBar;
