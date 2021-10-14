@@ -28,23 +28,23 @@ function App(props) {
   });
   return (
     <>
-      <Container fluid style={styles.app}>
-        <Row>
-          <Col style={styles.leftSidebar} className="leftSidebar">
-            <Row>
+      <Router>
+        <Container fluid style={styles.app}>
+          <Row>
+            <Col style={styles.leftSidebar} className="leftSidebar">
               <Row>
-                <h2 style={{ color: 'white' }}>Profile Component</h2>
+                <Row>
+                  <h2 style={{ color: 'white' }}>Profile Component</h2>
+                </Row>
+                <Row style={{ margin: 'auto' }}>
+                  <SearchBar searchChange={onSearchChange} />
+                </Row>
               </Row>
-              <Row style={{ margin: 'auto' }}>
-                <SearchBar searchChange={onSearchChange} />
+              <Row style={styles.contactList}>
+                <ContactList contacts={filteredContacts} />
               </Row>
-            </Row>
-            <Row style={styles.contactList}>
-              <ContactList contacts={filteredContacts} />
-            </Row>
-          </Col>
-          <Col>
-            <Router>
+            </Col>
+            <Col>
               <Switch>
                 <Route
                   exact
@@ -53,10 +53,10 @@ function App(props) {
                 />
                 <Route component={NoConvo} />
               </Switch>
-            </Router>
-          </Col>
-        </Row>
-      </Container>
+            </Col>
+          </Row>
+        </Container>
+      </Router>
     </>
   );
 }

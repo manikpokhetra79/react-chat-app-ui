@@ -1,0 +1,8 @@
+.no-chat-background {
+  background: url('../../images/background.jpg');
+  height: 100vh;
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 1px solid black;
+}
