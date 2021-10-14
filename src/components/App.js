@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { fetchContacts } from '../actions/contact';
-import './App.css';
-import SearchBar from './SearchBar';
-import ContactList from './ContactList';
-
+import './stylesheets/App.css';
+import SearchBar from './LeftSidebar/SearchBar';
+import ContactList from './LeftSidebar/ContactList';
+import ConversationList from './RightSidebar/ConversationList';
+import NoConvo from './RightSidebar/NoConvo';
 function App(props) {
   const [contacts, setContacts] = useState([]);
   const [searchfield, setSearchField] = useState('');
@@ -41,7 +43,18 @@ function App(props) {
               <ContactList contacts={filteredContacts} />
             </Row>
           </Col>
-          <Col style={styles.rightSidebar}></Col>
+          <Col>
+            <Router>
+              <Switch>
+                <Route
+                  exact
+                  path="/conversations/:id"
+                  render={(props) => <ConversationList {...props} />}
+                />
+                <Route component={NoConvo} />
+              </Switch>
+            </Router>
+          </Col>
         </Row>
       </Container>
     </>
@@ -53,25 +66,14 @@ function mapStateToProps(state) {
   };
 }
 const styles = {
-  app: {
-    maxHeight: '100vh',
-  },
   leftSidebar: {
     backgroundColor: '#3b4044',
     borderRight: '1px solid grey',
     padding: '10px',
-    position: 'fixed',
     zIndex: '1',
     top: '0',
     bottom: '0',
-  },
-  rightSidebar: {
-    backgroundColor: '#262D31',
-    position: 'fixed',
-    overflowY: 'auto',
-
-    top: '0',
-    bottom: '0',
+    maxWidth: '40vw',
   },
 };
 export default connect(mapStateToProps)(App);

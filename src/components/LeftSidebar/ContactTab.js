@@ -1,7 +1,8 @@
 import React from 'react';
-import ContactAvatar from './Left Sidebar Components/ContactAvatar';
-import ContactLastMessage from './Left Sidebar Components/ContactLastMessage';
-import ContactName from './Left Sidebar Components/ContactName';
+import ContactAvatar from './ContactAvatar';
+import ContactLastMessage from './ContactLastMessage';
+import ContactName from './ContactName';
+import { Link } from 'react-router-dom';
 function ContactTab(props) {
   const { image, name, chatlog } = props.contact;
 

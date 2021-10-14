@@ -1,8 +1,0 @@
-.contactscreen {
-  width: 30vw;
-}
-@media (max-width: 1200px) {
-  .contactscreen {
-    width: 45vw;
-  }
-}

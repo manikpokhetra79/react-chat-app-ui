@@ -1,9 +1,0 @@
-/* App component css */
-.leftSidebar {
-  width: 30vw;
-}
-@media (max-width: 1200px) {
-  .leftSidebar {
-    width: 45vw;
-  }
-}

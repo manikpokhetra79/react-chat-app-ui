@@ -1,6 +1,7 @@
 import React from 'react';
 import ContactTab from './ContactTab';
-import './ContactList.css';
+import '../stylesheets/ContactList.css';
+
 function ContactList({ contacts }) {
   // need contact tab component
   return (
@@ -15,7 +16,6 @@ function ContactList({ contacts }) {
 }
 const styles = {
   contactList: {
-    position: 'fixed',
     overflowY: 'scroll',
     height: '85vh',
     zIndex: '2',

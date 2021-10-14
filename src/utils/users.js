@@ -207,6 +207,13 @@ export const data = {
           'https://tvline.com/wp-content/uploads/2020/06/rob-benedict-supernatural.jpg',
         chatlog: [],
       },
+      {
+        id: 9,
+        name: 'Mary winchester',
+        image:
+          'https://upload.wikimedia.org/wikipedia/commons/1/17/Samantha_Smith_%2845671429942%29.jpg',
+        chatlog: [],
+      },
     ],
   },
 };
