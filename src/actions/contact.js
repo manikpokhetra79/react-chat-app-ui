@@ -1,5 +1,5 @@
 import { FETCH_CONTACTS } from './actionTypes';
-import { data } from '../utils/users';
+
 
 export function updateContacts(contacts) {
   return {
@@ -7,10 +7,10 @@ export function updateContacts(contacts) {
     contacts: contacts,
   };
 }
-export function fetchContacts() {
-  return (dispatch) => {
-    const contacts = data.profile.contacts;
+// export function fetchContacts() {
+//   return (dispatch) => {
+//     const contacts = data.profile.contacts;
 
-    dispatch(updateContacts(contacts));
-  };
-}
+//     dispatch(updateContacts(contacts));
+//   };
+// }
