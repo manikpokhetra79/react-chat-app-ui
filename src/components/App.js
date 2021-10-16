@@ -2,13 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
+
+import { data } from '../utils/users';
 import { updateContacts } from '../actions/contact';
+
 import './stylesheets/App.css';
 import SearchBar from './LeftSidebar/SearchBar';
 import ContactList from './LeftSidebar/ContactList';
 import ConversationList from './RightSidebar/ConversationList';
 import NoConvo from './RightSidebar/NoConvo';
-import { data } from '../utils/users';
+
 function App(props) {
   const [contacts, setContacts] = useState([]);
   const [searchfield, setSearchField] = useState('');
@@ -30,9 +33,9 @@ function App(props) {
   });
   return (
     <>
-      <Container fluid style={styles.app}>
+      <Container fluid>
         <Row>
-          <Col style={styles.leftSidebar} className="leftSidebar">
+          <Col className="left-sidebar" xs={6} sm={4} md={4} lg={5} xl={4}>
             <Row>
               <Row>
                 <h2 style={{ color: 'white' }}>Profile Component</h2>
@@ -41,20 +44,16 @@ function App(props) {
                 <SearchBar searchChange={onSearchChange} />
               </Row>
             </Row>
-            <Row style={styles.contactList}>
+            <Row>
               <ContactList contacts={filteredContacts} />
             </Row>
           </Col>
-          <Col>
+          <Col className="right-sidebar" xs={6} sm={8} md={8} lg={7} xl={8}>
             <Switch>
               <Route
                 path="/conversations/:id"
                 render={(props) => (
-                  <ConversationList
-                    {...props}
-                    contacts={contacts}
-                    setContacts={setContacts}
-                  />
+                  <ConversationList {...props} contacts={contacts} />
                 )}
               />
               <Route component={NoConvo} />
@@ -70,15 +69,5 @@ function mapStateToProps(state) {
     contacts: state.contacts,
   };
 }
-const styles = {
-  leftSidebar: {
-    backgroundColor: '#3b4044',
-    borderRight: '1px solid grey',
-    padding: '10px',
-    zIndex: '1',
-    top: '0',
-    bottom: '0',
-    maxWidth: '40vw',
-  },
-};
+
 export default connect(mapStateToProps)(App);

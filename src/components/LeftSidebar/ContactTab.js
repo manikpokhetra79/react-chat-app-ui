@@ -12,7 +12,7 @@ function ContactTab(props) {
     text: 'Conversation not initiated',
   };
   return (
-    <Link to={`/conversations/${id}`}>
+    <Link to={`/conversations/${id}`} className="link-tag">
       <div className="Contact-tab" style={styles.contactTab}>
         <div>
           <ContactAvatar image={image} />
