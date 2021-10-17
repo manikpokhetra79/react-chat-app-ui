@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Col, Container, Row } from 'react-bootstrap';
-import { connect } from 'react-redux';
+
 import { Route, Switch } from 'react-router-dom';
 
 import { data } from '../utils/users';
@@ -14,21 +14,28 @@ import ContactList from './LeftSidebar/ContactList';
 import ConversationList from './RightSidebar/ConversationList';
 import NoConvo from './RightSidebar/NoConvo';
 import ProfileHeader from './LeftSidebar/ProfileHeader';
+import NewConversation from './LeftSidebar/NewConversation';
+import NewConversationTab from './LeftSidebar/NewConversationTab';
 
-function App(props) {
+function App() {
   const [contacts, setContacts] = useState([]);
   const [searchfield, setSearchField] = useState('');
+  const [newConvoTab, showNewConvoTab] = useState(false);
+  const stateContacts = useSelector((state) => state.contacts);
+
+  console.log(stateContacts);
   const dispatch = useDispatch();
   // fetch contacts from
   useEffect(() => {
     // dispatch action to store contacts in state
     dispatch(updateContacts(data.profile.contacts));
-    setContacts(props.contacts);
-  }, [dispatch, props]);
+    setContacts(stateContacts.contacts);
+  }, [dispatch, stateContacts.contacts]);
   //handle search change
   const onSearchChange = (event) => {
     setSearchField(event.target.value);
   };
+
   // filter results
   const filteredContacts = contacts.filter((contact) => {
     //this will return only the contacts whose name is same as searched input
@@ -48,6 +55,9 @@ function App(props) {
               <Row style={{ margin: 'auto' }}>
                 <SearchBar searchChange={onSearchChange} />
               </Row>
+              <Row>
+                <NewConversation showNewConvoTab={showNewConvoTab} />
+              </Row>
             </Row>
             <Row>
               <ContactList contacts={filteredContacts} />
@@ -63,16 +73,17 @@ function App(props) {
               />
               <Route component={NoConvo} />
             </Switch>
+            {newConvoTab && (
+              <NewConversationTab
+                contacts={contacts}
+                showNewConvoTab={showNewConvoTab}
+              />
+            )}
           </Col>
         </Row>
       </Container>
     </>
   );
 }
-function mapStateToProps(state) {
-  return {
-    contacts: state.contacts,
-  };
-}
 
-export default connect(mapStateToProps)(App);
+export default App;

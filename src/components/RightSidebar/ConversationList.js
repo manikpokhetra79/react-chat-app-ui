@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import '../stylesheets/rightSidebar.css';
 import MessageBox from './MessageBox';
 function ConversationList(props) {
-  console.log(props);
+  // console.log(props);
   const { contacts } = props;
   const { id } = useParams();
   const userId = parseInt(id);

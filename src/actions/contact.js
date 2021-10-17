@@ -6,3 +6,7 @@ export function updateContacts(contacts) {
     contacts: contacts,
   };
 }
+
+export function addNewMessage(message, userId) {
+  return { type: ADD_MESSAGE, message, userId };
+}

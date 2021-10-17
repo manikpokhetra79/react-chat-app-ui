@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import LeftChatBubble from './LeftChatBubble';
+import { useDispatch } from 'react-redux';
 import RightChatBubble from './RightChatBubble';
 import MessageInput from './MessageInput';
+import { addNewMessage } from '../../actions/contact';
 function MessageBox(props) {
   const [chat, setChat] = useState([]);
   const [length, setLength] = useState();
-
+  const dispatch = useDispatch();
   useEffect(() => {
     setChat(props.user.chatlog);
     setLength(props.user.chatlog.length);
@@ -17,6 +19,7 @@ function MessageBox(props) {
       sender: 'me',
       message_id: length + 1,
     };
+    dispatch(addNewMessage(object, props.user.id));
     // updatelength
     setLength(object.message_id);
 
