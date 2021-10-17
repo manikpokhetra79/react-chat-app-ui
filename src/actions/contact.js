@@ -1,5 +1,4 @@
-import { FETCH_CONTACTS } from './actionTypes';
-
+import { FETCH_CONTACTS, ADD_MESSAGE } from './actionTypes';
 
 export function updateContacts(contacts) {
   return {
@@ -7,10 +6,3 @@ export function updateContacts(contacts) {
     contacts: contacts,
   };
 }
-// export function fetchContacts() {
-//   return (dispatch) => {
-//     const contacts = data.profile.contacts;
-
-//     dispatch(updateContacts(contacts));
-//   };
-// }

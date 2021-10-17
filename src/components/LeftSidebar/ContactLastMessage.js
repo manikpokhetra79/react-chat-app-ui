@@ -9,7 +9,7 @@ function ContactLastMessage(props) {
 }
 const styles = {
   contactText: {
-    fontSize: '14px',
+    fontSize: '12px',
     color: '#2F2F2F',
   },
 };

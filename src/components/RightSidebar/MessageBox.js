@@ -4,10 +4,24 @@ import RightChatBubble from './RightChatBubble';
 import MessageInput from './MessageInput';
 function MessageBox(props) {
   const [chat, setChat] = useState([]);
+  const [length, setLength] = useState();
+
   useEffect(() => {
     setChat(props.user.chatlog);
+    setLength(props.user.chatlog.length);
   }, [props]);
-  console.log(chat);
+  let updateMesssages = (message) => {
+    let object = {
+      text: message,
+      timestamp: '12:00',
+      sender: 'me',
+      message_id: length + 1,
+    };
+    // updatelength
+    setLength(object.message_id);
+
+    setChat([...chat, object]);
+  };
 
   return (
     <>
@@ -36,7 +50,7 @@ function MessageBox(props) {
           </div>
         )}
 
-        <MessageInput />
+        <MessageInput newMessageHandler={updateMesssages} />
       </div>
     </>
   );

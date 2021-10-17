@@ -15,5 +15,9 @@ body {
 }
 .left-sidebar {
   background-color: #648381;
-  border-right: 1px solid grey;
 }
+/* @media screen and (max-width: 972px) {
+  body {
+    font-size: 12px;
+  }
+} */

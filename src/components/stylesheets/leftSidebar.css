@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  flex-direction: row wrap;
+  margin-top: 1.1rem;
+  align-items: center;
+}
+.avatar {
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.header p {
+  font-size: 18px;
+  font-family: cursive;
+}

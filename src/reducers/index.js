@@ -1,3 +1,5 @@
 import { combineReducers } from 'redux';
 import contacts from './contact';
-export default combineReducers({ contacts });
+import messages from './message';
+import user from './user';
+export default combineReducers({ contacts, messages, user });

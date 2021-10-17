@@ -4,7 +4,6 @@ export const data = {
     name: 'John Doe',
     image:
       'https://images.pexels.com/photos/1097456/pexels-photo-1097456.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    status: 'Available',
     contacts: [
       {
         id: 2,

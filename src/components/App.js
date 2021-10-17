@@ -8,10 +8,12 @@ import { data } from '../utils/users';
 import { updateContacts } from '../actions/contact';
 
 import './stylesheets/App.css';
+import './stylesheets/leftSidebar.css';
 import SearchBar from './LeftSidebar/SearchBar';
 import ContactList from './LeftSidebar/ContactList';
 import ConversationList from './RightSidebar/ConversationList';
 import NoConvo from './RightSidebar/NoConvo';
+import ProfileHeader from './LeftSidebar/ProfileHeader';
 
 function App(props) {
   const [contacts, setContacts] = useState([]);
@@ -39,7 +41,9 @@ function App(props) {
           <Col className="left-sidebar" xs={6} sm={5} md={4} lg={5} xl={4}>
             <Row>
               <Row>
-                <h2 style={{ color: 'white' }}>Profile Component</h2>
+                <h2 style={{ color: 'white' }}>
+                  <ProfileHeader />
+                </h2>
               </Row>
               <Row style={{ margin: 'auto' }}>
                 <SearchBar searchChange={onSearchChange} />
