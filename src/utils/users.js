@@ -198,6 +198,12 @@ export const data = {
             sender: 'me',
             message_id: 5,
           },
+          {
+            text: 'Sure John, Take care !',
+            timestamp: '10:09 AM',
+            sender: 'user',
+            message_id: 6,
+          },
         ],
       },
       {

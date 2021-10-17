@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Col, Container, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
@@ -15,7 +16,7 @@ import NoConvo from './RightSidebar/NoConvo';
 function App(props) {
   const [contacts, setContacts] = useState([]);
   const [searchfield, setSearchField] = useState('');
-  const { dispatch } = props;
+  const dispatch = useDispatch();
   // fetch contacts from
   useEffect(() => {
     // dispatch action to store contacts in state
@@ -35,7 +36,7 @@ function App(props) {
     <>
       <Container fluid>
         <Row>
-          <Col className="left-sidebar" xs={6} sm={4} md={4} lg={5} xl={4}>
+          <Col className="left-sidebar" xs={6} sm={5} md={4} lg={5} xl={4}>
             <Row>
               <Row>
                 <h2 style={{ color: 'white' }}>Profile Component</h2>
@@ -48,7 +49,7 @@ function App(props) {
               <ContactList contacts={filteredContacts} />
             </Row>
           </Col>
-          <Col className="right-sidebar" xs={6} sm={8} md={8} lg={7} xl={8}>
+          <Col className="right-sidebar" xs={6} sm={7} md={8} lg={7} xl={8}>
             <Switch>
               <Route
                 path="/conversations/:id"

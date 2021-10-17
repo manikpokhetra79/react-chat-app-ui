@@ -16,9 +16,9 @@ const styles = {
   input: {
     borderRadius: '18px',
     width: '80%',
-    backgroundColor: '#323739',
+    backgroundColor: '#fff',
     outline: 'none',
-    color : 'grey'
+    color: 'grey',
   },
 };
 export default SearchBar;

@@ -10,7 +10,7 @@ function ContactLastMessage(props) {
 const styles = {
   contactText: {
     fontSize: '14px',
-    color: 'rgb(168, 170, 153)',
+    color: '#2F2F2F',
   },
 };
 export default ContactLastMessage;

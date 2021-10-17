@@ -2,6 +2,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   overflow: hidden;
+  font-size: 14px;
 }
 
 .link-tag {
@@ -10,22 +11,9 @@ body {
 /* media queries */
 .right-sidebar {
   padding: 0;
-  background: -webkit-linear-gradient(
-    to right,
-    #243b55,
-    #141e30
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #243b55,
-    #141e30
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: #dad3cb;
 }
 .left-sidebar {
-  background-color: #3b4044;
+  background-color: #648381;
   border-right: 1px solid grey;
-  padding: 10px;
-  z-index: 1;
-  top: 0;
-  bottom: 0;
 }

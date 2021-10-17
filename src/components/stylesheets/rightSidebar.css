@@ -7,7 +7,7 @@
   border-top: 1px solid black;
 }
 .message-box {
-  height: 100vh;
+  height: 95vh;
   padding: 3px;
   overflow: auto;
 }
@@ -17,24 +17,44 @@
   justify-content: space-around;
   padding: 30px 40px;
 }
+.message-bubble {
+  display: flex;
+  align-items: center;
+}
+.mbr {
+  flex-direction: row-reverse;
+}
+
 /* chat bubbles css */
 .left-bubble {
-  width: 240px;
+  width: 220px;
   height: auto;
   display: block;
   background: #f5f5f5;
   border-radius: 4px;
-  box-shadow: 2px 8px 5px #000;
   position: relative;
-  margin: 25px 0;
+  margin: 15px 0;
   padding: 8px;
+}
+@media screen and (max-width: 792px) {
+  .left-bubble {
+    width: 200px;
+    padding: 6px;
+    margin: 10px 0;
+  }
+  .name {
+    font-size: 12px;
+  }
+  .message {
+    font-size: 14px;
+  }
 }
 .txt {
   padding: 8px 55px 8px 14px;
 }
 .name {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 13px;
   margin: 0 0 4px;
   color: #3498db;
 }
@@ -65,16 +85,23 @@
 }
 /* right bubble */
 .right-bubble {
-  width: 240px;
+  width: 220px;
   height: auto;
   display: block;
   background: #f5f5f5;
   border-radius: 4px;
-  box-shadow: 2px 8px 5px #000;
+
   position: relative;
-  margin: 0 0 0 60px;
+  margin: 10px 0;
   align-self: flex-end;
   padding: 8px;
+}
+@media screen and (max-width: 792px) {
+  .right-bubble {
+    width: 200px;
+    padding: 6px;
+    margin: 10px 0;
+  }
 }
 .bubble-arrow-alt {
   right: -2px;
@@ -88,21 +115,19 @@
 .message-input {
   display: flex;
   width: 100%;
-  background: #141e30; /* fallback for old browsers */
+  background: #648381; /* fallback for old browsers */
   z-index: 2;
-  position: sticky;
+  position: absolute;
   bottom: 0;
   padding: 1.1rem;
 }
 
 .message-input input {
-  border-radius: 18px;
-  background-color: #323739;
   outline: none;
-  color: rgb(255, 255, 255);
-  max-width: 70%;
-  padding: 0.6rem;
+  padding: 6px;
 }
 .message-input input::placeholder {
   color: rgb(255, 255, 255);
 }
+
+/* send button  css */

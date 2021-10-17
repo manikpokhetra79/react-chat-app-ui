@@ -1,6 +1,5 @@
 import React from 'react';
 import ContactTab from './ContactTab';
-import '../stylesheets/ContactList.css';
 
 function ContactList({ contacts }) {
   // need contact tab component
@@ -19,7 +18,7 @@ const styles = {
     overflowY: 'scroll',
     height: '85vh',
     zIndex: '2',
-    backgroundColor: '#131C21',
+    backgroundColor: '#EAF5F5',
   },
 };
 export default ContactList;

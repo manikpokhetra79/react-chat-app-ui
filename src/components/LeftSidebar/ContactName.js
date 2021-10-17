@@ -10,7 +10,7 @@ function ContactName({ name }) {
 const styles = {
   contactText: {
     fontSize: '16px',
-    color: 'rgb(233 233 229)',
+    color: '#000',
     marginBottom: '3px',
   },
 };
