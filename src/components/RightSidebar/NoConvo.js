@@ -3,7 +3,7 @@ import '../stylesheets/rightSidebar.css';
 function NoConvo() {
   return (
     <div className="no-chat-background">
-      <p>Hello</p>
+      <h2 style={{ margin: '2rem' }}>Welcome to React chat app buddy.</h2>
     </div>
   );
 }

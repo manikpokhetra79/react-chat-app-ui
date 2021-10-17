@@ -6,21 +6,24 @@ import { Link } from 'react-router-dom';
 function ContactTab(props) {
   const { image, name, chatlog, id } = props.contact;
 
-  let length = chatlog.length - 1;
+  let length = chatlog.length;
 
   const noMessage = {
     text: 'Conversation not initiated',
   };
   return (
     <Link to={`/conversations/${id}`} className="link-tag">
-      <div className="Contact-tab" style={styles.contactTab}>
+      <div className="contact-tab" s>
         <div>
+          {' '}
           <ContactAvatar image={image} />
         </div>
-        <div style={styles.contactText}>
+
+        <div style={{ marginLeft: '16px' }}>
           <ContactName name={name} />
+
           <ContactLastMessage
-            chatlog={length > 0 ? chatlog[length] : noMessage}
+            chatlog={length > 0 ? chatlog[length - 1] : noMessage}
           />
         </div>
       </div>
@@ -28,17 +31,4 @@ function ContactTab(props) {
   );
 }
 
-const styles = {
-  contactTab: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderTop: '1px solid #30383d',
-    padding: '4px',
-  },
-  contactText: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-};
 export default ContactTab;

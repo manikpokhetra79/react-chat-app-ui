@@ -1,8 +1,6 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-function ProfileHeader() {
-  const user = useSelector((state) => state.user);
 
+function ProfileHeader({ user }) {
   return (
     <>
       <div className="header">

@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import RightChatBubble from './RightChatBubble';
 import MessageInput from './MessageInput';
 import { addNewMessage } from '../../actions/contact';
+import ProfileHeader from '../LeftSidebar/ProfileHeader';
 function MessageBox(props) {
   const [chat, setChat] = useState([]);
   const [length, setLength] = useState();
@@ -29,6 +30,9 @@ function MessageBox(props) {
   return (
     <>
       <div className="message-box">
+        <div className="message-box-header" xs={6} sm={7} md={8} lg={7} xl={8}>
+          <ProfileHeader user={props.user} />
+        </div>
         {chat.length > 0 && (
           <div className="messages-section">
             {chat.map((m, index) =>
@@ -53,7 +57,7 @@ function MessageBox(props) {
           </div>
         )}
 
-        <MessageInput newMessageHandler={updateMesssages} />
+        <MessageInput newMessageHandler={updateMesssages} user={props.user} />
       </div>
     </>
   );

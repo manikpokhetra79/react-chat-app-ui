@@ -21,6 +21,7 @@ function App() {
   const [contacts, setContacts] = useState([]);
   const [searchfield, setSearchField] = useState('');
   const [newConvoTab, showNewConvoTab] = useState(false);
+  const user = useSelector((state) => state.user);
   const stateContacts = useSelector((state) => state.contacts);
 
   console.log(stateContacts);
@@ -49,7 +50,7 @@ function App() {
             <Row>
               <Row>
                 <h2 style={{ color: 'white' }}>
-                  <ProfileHeader />
+                  <ProfileHeader user={user} />
                 </h2>
               </Row>
               <Row style={{ margin: 'auto' }}>

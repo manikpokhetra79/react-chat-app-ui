@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
 function MessageInput(props) {
   const { newMessageHandler } = props;
   const [message, setMessage] = useState('');
+  useEffect(() => {
+    // reset input value when contact component changes
+    setMessage('');
+  }, [setMessage, props]);
   let handleInputChange = (e) => {
     e.preventDefault();
     setMessage(e.target.value);
   };
   let handleSubmit = () => {
-    newMessageHandler(message);
+    if (message) {
+      newMessageHandler(message);
+    } else {
+      alert('Type some message text before submitting');
+    }
     setMessage('');
   };
   return (
