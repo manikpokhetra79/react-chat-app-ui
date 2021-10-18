@@ -22,13 +22,13 @@ Create the frontend for a chat application.
 ## Screenshots
 
 - HomeScreen
-  ![alt text]('https://raw.githubusercontent.com/manikpokhetra79/react-chat-app-ui/main/appScreenshots/homeScreen.png')
+  ![home](https://raw.githubusercontent.com/manikpokhetra79/react-chat-app-ui/main/appScreenshots/homeScreen.png)
 
 - RightView
-  ![alt text]('https://raw.githubusercontent.com/manikpokhetra79/react-chat-app-ui/main/appScreenshots/conversation%20component.png')
+  ![rightview](https://raw.githubusercontent.com/manikpokhetra79/react-chat-app-ui/main/appScreenshots/conversation%20component.png)
 
 - New Conversation Screen
-  ![alt text]('https://raw.githubusercontent.com/manikpokhetra79/react-chat-app-ui/main/appScreenshots/create%20new%20convo.png')
+  ![newconvo](https://raw.githubusercontent.com/manikpokhetra79/react-chat-app-ui/main/appScreenshots/create%20new%20convo.png)
 
 ## How to Install :
 
