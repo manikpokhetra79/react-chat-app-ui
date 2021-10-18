@@ -4,7 +4,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './components/App';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { configureStore } from './store';
 const store = configureStore();
@@ -18,7 +18,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-console.log(store.getState());
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

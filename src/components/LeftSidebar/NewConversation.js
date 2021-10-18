@@ -5,9 +5,12 @@ function NewConversation(props) {
     props.showNewConvoTab(true);
   };
   return (
-    <div className="new-convo" onClick={handleClick}>
+    <div className="new-convo">
       <p>New Conversation</p>
-      <i className="fas fa-2x fa-user-plus"></i>
+      <span>
+        {' '}
+        <i onClick={handleClick} className="fas fa-plus"></i>
+      </span>
     </div>
   );
 }

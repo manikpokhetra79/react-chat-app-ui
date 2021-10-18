@@ -18,7 +18,6 @@ const styles = {
     width: '100%',
     backgroundColor: '#fff',
     outline: 'none',
-
     margin: 'auto',
     padding: '5px',
     border: '1px solid #cccccc',

@@ -7,7 +7,7 @@
 }
 /* header */
 .message-box-header {
-  background: #648381;
+  background: #0c6178;
   position: fixed;
   top: 0;
   width: 100%;
@@ -38,8 +38,13 @@
   left: 60%;
   font-size: 18px;
   color: #fff;
-  background-color: #648381;
+  background-color: #3c8dad;
   padding: 1.2rem;
+}
+@media screen and (max-width: 622px) {
+  .no-message-alert {
+    font-size: 14px;
+  }
 }
 /* chat bubbles css */
 .left-bubble {
@@ -133,11 +138,11 @@
 }
 /* message-input */
 .message-input {
-  background: #648381;
+  background: #0c6178;
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 8px;
+  padding: 12px;
   box-sizing: border-box;
 }
 

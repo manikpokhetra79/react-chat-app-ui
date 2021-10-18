@@ -24,7 +24,6 @@ function App() {
   const user = useSelector((state) => state.user);
   const stateContacts = useSelector((state) => state.contacts);
 
-  console.log(stateContacts);
   const dispatch = useDispatch();
   // fetch contacts from
   useEffect(() => {
@@ -48,16 +47,23 @@ function App() {
         <Row>
           <Col className="left-sidebar" xs={6} sm={5} md={4} lg={5} xl={4}>
             <Row className="left-sidebar-header">
-              <Row>
-                <h2 style={{ color: 'white' }}>
+              <Row className="d-flex align-items-center">
+                <Col>
+                  {' '}
                   <ProfileHeader user={user} />
-                </h2>
+                </Col>
+                <Col>
+                  {' '}
+                  <NewConversation showNewConvoTab={showNewConvoTab} />
+                </Col>
               </Row>
-              <Row style={{ margin: 'auto' }}>
+              <Row
+                style={{
+                  margin: 'auto',
+                  paddingTop: 'px',
+                }}
+              >
                 <SearchBar searchChange={onSearchChange} />
-              </Row>
-              <Row>
-                <NewConversation showNewConvoTab={showNewConvoTab} />
               </Row>
             </Row>
             <Row>

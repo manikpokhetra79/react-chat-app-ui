@@ -3,6 +3,7 @@ body {
   box-sizing: border-box;
   overflow: hidden;
   font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .link-tag {
@@ -14,7 +15,7 @@ body {
   background-color: #dad3cb;
 }
 .left-sidebar {
-  background-color: #648381;
+  background-color: #0c6178;
 }
 /* @media screen and (max-width: 972px) {
   body {

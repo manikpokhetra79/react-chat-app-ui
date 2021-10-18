@@ -18,6 +18,7 @@ function MessageInput(props) {
       alert('Type some message text before submitting');
     }
     setMessage('');
+    // scroll to the bottom
   };
   return (
     <>

@@ -6,10 +6,9 @@ function ContactList({ contacts }) {
   return (
     <>
       <div style={styles.contactList} className="contactscreen">
-        {contacts.map(
-          (contact, index) =>
-            <ContactTab contact={contact} key={index} />
-        )}
+        {contacts.map((contact, index) => (
+          <ContactTab contact={contact} key={index} />
+        ))}
       </div>
     </>
   );
@@ -17,9 +16,9 @@ function ContactList({ contacts }) {
 const styles = {
   contactList: {
     overflowY: 'scroll',
-    height: '72vh',
+    height: '80vh',
     zIndex: '2',
-    backgroundColor: '#EAF5F5',
+    backgroundColor: '#fff',
   },
 };
 export default ContactList;
