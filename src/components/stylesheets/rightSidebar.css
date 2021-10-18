@@ -67,7 +67,8 @@
     font-size: 12px;
   }
   .message {
-    font-size: 14px;
+    font-size: 13px;
+    word-wrap: break-word;
   }
 }
 @media screen and (max-width: 622px) {
