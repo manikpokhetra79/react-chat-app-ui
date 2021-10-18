@@ -33,6 +33,7 @@ function MessageBox(props) {
         <div className="message-box-header" xs={6} sm={7} md={8} lg={7} xl={8}>
           <ProfileHeader user={props.user} />
         </div>
+        {chat.length === 0 && <p className="no-message-alert">NO MESSAGES FOUND</p>}
         {chat.length > 0 && (
           <div className="messages-section">
             {chat.map((m, index) =>

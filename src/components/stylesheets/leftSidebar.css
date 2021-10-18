@@ -26,6 +26,10 @@
   font-size: 12px;
   color: #2f2f2f;
 }
+/*  */
+.left-sidebar-header {
+  box-shadow: 0 4px 8px 0 rgb(59 59 59 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
 
 /* new convo tab */
 .new-convo {

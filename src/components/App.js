@@ -47,7 +47,7 @@ function App() {
       <Container fluid>
         <Row>
           <Col className="left-sidebar" xs={6} sm={5} md={4} lg={5} xl={4}>
-            <Row>
+            <Row className="left-sidebar-header">
               <Row>
                 <h2 style={{ color: 'white' }}>
                   <ProfileHeader user={user} />

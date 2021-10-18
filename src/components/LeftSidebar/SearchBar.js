@@ -15,10 +15,13 @@ function SearchBar({ searchChange }) {
 const styles = {
   input: {
     borderRadius: '18px',
-    width: '80%',
+    width: '100%',
     backgroundColor: '#fff',
     outline: 'none',
-    color: 'grey',
+
+    margin: 'auto',
+    padding: '5px',
+    border: '1px solid #cccccc',
   },
 };
 export default SearchBar;

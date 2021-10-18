@@ -13,6 +13,7 @@
   width: 100%;
   box-sizing: border-box;
   z-index: 3;
+  box-shadow: 0 4px 8px 0 rgb(59 59 59 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 
 .messages-section {
@@ -29,7 +30,17 @@
 .mbr {
   flex-direction: row-reverse;
 }
+/* no message found */
 
+.no-message-alert {
+  position: absolute;
+  bottom: 50px;
+  left: 60%;
+  font-size: 18px;
+  color: #fff;
+  background-color: #648381;
+  padding: 1.2rem;
+}
 /* chat bubbles css */
 .left-bubble {
   width: 220px;
