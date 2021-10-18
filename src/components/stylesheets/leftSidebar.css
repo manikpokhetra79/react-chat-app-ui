@@ -26,6 +26,12 @@
   justify-content: space-between;
   font-size: 13px;
   color: #2f2f2f;
+  width: auto;
+}
+.contactText p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 /*  */
 .left-sidebar-header {

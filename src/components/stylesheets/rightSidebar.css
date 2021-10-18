@@ -68,7 +68,6 @@
   }
   .message {
     font-size: 13px;
-    word-wrap: break-word;
   }
 }
 @media screen and (max-width: 622px) {
@@ -78,6 +77,11 @@
 }
 .txt {
   padding: 8px 55px 8px 14px;
+}
+.message {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 .name {
   font-weight: 600;
